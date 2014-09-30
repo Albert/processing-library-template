@@ -1,19 +1,13 @@
-import template.library.*;
-
-HelloLibrary hello;
+import info.lumarca.*;
 
 void setup() {
-  size(400,400);
-  smooth();
-  
-  hello = new HelloLibrary(this);
-  
-  PFont font = createFont("",40);
-  textFont(font);
+  JSONObject json = loadJSONObject("lumarcaConfig.json");
+  Lumarca thisLumarca = new Lumarca(json);
+  size(400, 400);
 }
 
 void draw() {
   background(0);
   fill(255);
-  text(hello.sayHello(), 40, 200);
+  sphere(1.0);
 }
